@@ -8,7 +8,7 @@ module.exports = {
         return [
             {
                 source: '/api/:path*',
-                destination: 'https://apiporssisahko.net/v1/:path*',
+                destination: 'https://api.porssisahko.net/v1/:path*',
             },
         ];
     },
