@@ -11,11 +11,11 @@ export default function TodaysPriceAverage({ data }: { data: any }) {
   }
 
   // Laske tämän päivän hintojen keskiarvo
-  const today = new Date().toISOString().split('T')[0]; // Tämän päivän päivämäärä muodossa "YYYY-MM-DD"
-  const todayStartDate = new Date(today + 'T00:00:00.000Z').toISOString(); // Tämän päivän klo 00.00
-  const todayEndTime = new Date(today + 'T23:59:59.999Z').toISOString(); // Tämän päivän klo 23.59
+  const today = new Date().toISOString().split('T')[0];
+  const todayStartDate = new Date(today + 'T00:00:00.000Z').toISOString();
+  const todayEndTime = new Date(today + 'T23:59:59.999Z').toISOString();
 
-  // Suodata vain tämän päivän tiedot, jotka ovat klo 00.00 ja klo 23.59 välillä
+  
   const todayPrices = data.prices.filter(
     (entry: { price: number; startDate: string }) =>
       entry.startDate >= todayStartDate && entry.startDate <= todayEndTime

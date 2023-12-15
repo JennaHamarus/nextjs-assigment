@@ -10,16 +10,16 @@ export default function TomorrowsPriceAverage({ data }: { data: any }) {
     );
   }
 
-  // Laske huomisen päivän hintojen keskiarvo
+  
   const tomorrow = new Date();
-  tomorrow.setDate(tomorrow.getDate() + 1); // Lisätään yksi päivä nykyiseen päivään
+  tomorrow.setDate(tomorrow.getDate() + 1);
 
-  const tomorrowISOStart = tomorrow.toISOString(); // Huomisen päivä alkaa
-  tomorrow.setHours(23, 59, 59, 999); // Asetetaan huomisen päivä päättyy klo 23:59:59.999
+  const tomorrowISOStart = tomorrow.toISOString();
+  tomorrow.setHours(23, 59, 59, 999);
 
-  const tomorrowISOEnd = tomorrow.toISOString(); // Huomisen päivä päättyy
+  const tomorrowISOEnd = tomorrow.toISOString();
 
-  // Suodatetaan huomisen päivän tiedot, jotka ovat huomisen päivän alusta huomisen päivän loppuun
+  
   const tomorrowPrices = data.prices.filter(
     (entry: { price: number; startDate: string }) =>
       entry.startDate >= tomorrowISOStart && entry.startDate <= tomorrowISOEnd

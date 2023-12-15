@@ -9,7 +9,7 @@ import NextHourPrice from '../components/nexthour';
 import TodaysPriceAverage from '../components/today-average';
 import TomorrowsPriceAverage from '../components/tomorrow-average';
 
-// Tyyppimäärittelyt
+
 export const inter = Inter({ subsets: ['latin'] });
 
 export type CustomError = {
@@ -17,7 +17,6 @@ export type CustomError = {
 };
 
 
-// Komponentti
 export default function TodaysPrices() {
   const [data, setData] = useState(null);
   const [isLoading, setLoading] = useState(true);
@@ -54,9 +53,7 @@ export default function TodaysPrices() {
     );
   }
 
-  
 
-  // Käytetään tyypitettyä ChartOptionsia
   const chartOptions: ChartOptions = {
     scales: {
       x: {
@@ -64,7 +61,7 @@ export default function TodaysPrices() {
         time: {
           unit: 'hour',
           displayFormats: {
-            hour: 'HH:mm', // Asetetaan näyttömuoto 'HH:mm' 24-tuntiselle ajanformaatille
+            hour: 'HH:mm',
           },
         },
       },
@@ -74,11 +71,11 @@ export default function TodaysPrices() {
     },
   };
 
-  // Funktio datan muotoilemiseksi Chart-komponentin tarpeisiin
+  // Muotoillaan data
   function formatChartData(data: { prices: { price: number; startDate: string }[] }): any {
-  const today = new Date().toISOString().split('T')[0]; // Tämän päivän päivämäärä muodossa "YYYY-MM-DD"
+  const today = new Date().toISOString().split('T')[0];
 
-  // Suodata vain tämän päivän tiedot
+  // Suodatetaan vain tämän päivän tiedot
   const todayPrices = data.prices.filter((entry) => entry.startDate.startsWith(today));
 
   const prices = todayPrices.map((entry) => entry.price);

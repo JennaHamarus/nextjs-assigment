@@ -55,10 +55,10 @@ export default function NextDaysPrices() {
   tomorrow.setUTCDate(tomorrow.getUTCDate() + 1);
   tomorrow.setUTCHours(0, 0, 0, 0);
 
-  const tomorrowDateString = tomorrow.toISOString().split('T')[0]; // Tomorrow's date in 'YYYY-MM-DD' format
+  const tomorrowDateString = tomorrow.toISOString().split('T')[0];
 
   const tomorrowPrices: FormattedPrice[] = formattedPrices.filter((entry) => {
-    const entryDateString = entry.time.split('T')[0]; // Date of the price in 'YYYY-MM-DD' format
+    const entryDateString = entry.time.split('T')[0];
     return entryDateString === tomorrowDateString;
   })
   .map((entry) => ({
