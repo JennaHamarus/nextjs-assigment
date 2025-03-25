@@ -12,6 +12,7 @@ Front page (Today)
 ![Tomorrows_prices_before_14](https://github.com/user-attachments/assets/acf79fb8-467f-4ad8-a27c-d2a30ed03144)
 
 "Next Day" page after 2:00pm
+![Tomorrows_prices_after_14](https://github.com/user-attachments/assets/1c9095ae-0f38-43a8-9d50-0d4866abee3f)
 
 
 "Search" page
